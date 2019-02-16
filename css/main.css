@@ -1,5 +1,3 @@
-/* Do not change any line marked -keep- */
-
 html {
     font-size: 100%; /* keep */
     box-sizing: border-box; /* keep */
@@ -8,13 +6,13 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
 }
 h1, h2 {
-    font-family: serif;
+    font-family: 'Roboto Slab', 'Cambria', 'Georgia', serif;
 }
 #tagline {
     font-style: italic;
@@ -24,77 +22,80 @@ img {
     display: block; /* keep */
     width: 100%; /* keep */
 }
-
-/* In the grid container below, you will change the columns,
-    the rows, and the AREAS to layout the page as instructed
-    in the assignment. After it matches the wide example, you will
-    write a media query with CSS rules to change the
-    layout to match the phone layout example.
-    */
-
-/* grid container */
 #container {
     max-width: 1280px; /* keep */
     margin: auto; /* keep */
     display: grid; /* keep */
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(6,auto);
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+      "header header header header header"
+      "pairing pairing pairing arial georgia"
+      "bobwhite-quail bobwhite-quail readability readability readability"
+      "bobwhite-quail bobwhite-quail line-length line-length line-length"
+      "typeface typeface typeface helvetica helvetica"
+      "footer footer footer footer footer";
 }
-
-/* all grid items -
-    these are the 10 direct children of the container
-    - all the grid items are here already!
-    You may add lines as needed. Do not change any line marked -keep-
-    */
-
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    text-align: center;
 }
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    padding: 2rem;
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    padding: 2rem;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    padding: 2rem 2rem 2rem 3rem;
+    font-size: 1.5rem;
+    margin: 0;
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    padding: 3rem;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 1.5rem;
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    line-height: 1.5rem;
+    padding: 1.5rem;
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    padding: 4rem;
+    margin: 2rem;
+    margin-bottom: auto;
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-shadow: .5px .5px #000;
+    padding: 1.5rem;
 }
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
 }
-
-/* end of all 10 grid items */
-
-
 /* pseudo classes */
 a {
     color: #7c6a60; /* keep */
@@ -105,3 +106,23 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+@media only screen and (max-width: 600px) {
+    #container {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(9, auto);
+        grid-template-areas:
+          "header header"
+          "arial georgia"
+          "pairing pairing"
+          "bobwhite-quail bobwhite-quail"
+          "readability readability"
+          "line-length line-length"
+          "typeface typeface"
+          "helvetica helvetica"
+          "footer footer";
+        }
+     .typography_line_terms{
+          display: none;
+        }
+
+}
